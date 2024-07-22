@@ -128,6 +128,8 @@ pub struct OsuRenderer {
     slider_to_screen_textures: SmallVec<[(Arc<Texture>, Arc<wgpu::Buffer>, Option<u32>); 32]>,
 
     depth_texture: DepthTexture,
+
+    prev_time: f64,
 }
 
 impl OsuRenderer {
@@ -618,6 +620,7 @@ impl OsuRenderer {
             follow_points_instance_buffer,
             offsets: Vector2::new(0.0, 0.0),
             hit_circle_diameter: 1.0,
+            prev_time: 0.0,
         }
     }
 
