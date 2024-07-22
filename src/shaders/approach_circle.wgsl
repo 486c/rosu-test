@@ -32,8 +32,8 @@ fn vs_main(
 
     let clip_position = camera.proj * camera.view
 		* vec4<f32>(
-			model.pos.x + instance.pos.x,
-			model.pos.y + instance.pos.y,
+			(model.pos.x * instance.scale) + instance.pos.x,
+			(model.pos.y * instance.scale) + instance.pos.y,
 			instance.pos.z,
 			1.0
 		);
